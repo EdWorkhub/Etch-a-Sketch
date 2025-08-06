@@ -1,0 +1,12 @@
+<div class="selection-backdrop"></div>
+<dialog class="selection-dialog" open>
+    <button id="selection-close-btn" (click)="onCloseSelection()">Close</button>
+    <h1 class="selection-h1">Select Grid Size</h1>
+    <form [formGroup]="myForm">
+        <p class="selection-p">
+            <label for="size">Size: </label>
+            <input type="number" formControlName="myInput" min="1" max="100"/>
+            <button (click)="submitForm()">Submit</button>
+        </p>
+    </form>
+</dialog>

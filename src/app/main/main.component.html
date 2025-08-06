@@ -1,1 +1,10 @@
-MainComponent
+<!-- Create grid of 16x16 square divs -->
+<div class="parent-container">
+
+    <div class="selection-container" *ngIf="dialogOpen">
+        <app-selection/>
+    </div>
+
+        <app-grid />
+
+</div>

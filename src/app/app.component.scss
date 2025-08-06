@@ -1,0 +1,19 @@
+/* || COMPONENT CONTAINER / FLEXBOX */ 
+// 100vh height at Component Container level
+
+// .main-container {
+//     display: flex;
+//     flex-direction: column;
+//     height: 100vh;
+// }
+
+/* || COMPONENT SPATIAL MNGMT */ 
+
+router-outlet {
+    flex: 1 0 auto;
+}
+
+app-header,
+app-footer {
+    flex-shrink: 0;
+}

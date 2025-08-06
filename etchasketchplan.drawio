@@ -1,0 +1,84 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.4 Chrome/138.0.7204.97 Electron/37.2.1 Safari/537.36" version="28.0.4">
+  <diagram name="Page-1" id="DC23oaqKzGKtHKG0idh1">
+    <mxGraphModel dx="395" dy="1924" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="9THv-4PewHuPhK5rk2aM-3" value="Objective:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Dynamically &lt;/b&gt;generated 16x16&amp;nbsp; grid within pre-allocated space with possibility of being regenerated up to size of 100x100 &lt;b&gt;within same preallocated size&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="320" y="40" width="180" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="9THv-4PewHuPhK5rk2aM-4" value="Components:&amp;nbsp;&lt;div&gt;&lt;br&gt;AppComponent&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;HeaderComponent&lt;/span&gt;&lt;/div&gt;&lt;div&gt;FooterComponent&amp;nbsp;&lt;/div&gt;&lt;div&gt;MainComponent: container&amp;nbsp;&lt;/div&gt;&lt;div&gt;GridComponent: preallocated grid space&amp;nbsp;&lt;/div&gt;&lt;div&gt;SelectionComponent: user input&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="30" y="40" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="9THv-4PewHuPhK5rk2aM-5" value="Logic:&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;grid.service.ts&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="60" y="210" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="9THv-4PewHuPhK5rk2aM-6" value="Service Functions:&lt;br&gt;&lt;br&gt;prev: was generating grid in service, now planning to just get # of squares and square dimensions and pass to Grid Component to generate&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;calculateDefaultGrid(): perform default calculation for 16 squares and pass to GridComponent for generation&amp;nbsp;&amp;nbsp;&lt;br&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;calculateGrid(userInput: number 1-100): perform calculations based on userinput and pass values to GridComponent for generation - TBD&lt;br&gt;&lt;br&gt;gridMath(userInput): generate column and row data based on userInput&lt;/div&gt;&lt;div&gt;&lt;b&gt;Currently based on static value of 500px, so just returns val / 500. will need more sophisticated formula later after first prototype&lt;br&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;destroyGrid(): remove previous grid&amp;nbsp;&amp;nbsp;&lt;br&gt;&lt;br&gt;openDialog(): opens SelectionComponent via dialog$ bs&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;closeDialog(): close SelectionComponent via dialog$ bs&lt;br&gt;&lt;br&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;changeDialog(): BS value for opening and closing user input selection dialog (really just governs access to SelectionComponent)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="625" y="740" width="395" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="DsAYXVk71sqchdjCGOco-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9THv-4PewHuPhK5rk2aM-8" target="DsAYXVk71sqchdjCGOco-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DsAYXVk71sqchdjCGOco-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9THv-4PewHuPhK5rk2aM-8" target="DsAYXVk71sqchdjCGOco-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1110" y="310" />
+              <mxPoint x="1110" y="205" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="9THv-4PewHuPhK5rk2aM-8" value="MainComponent:&lt;br&gt;&lt;br&gt;- Functions as container, contains Grid Component&lt;br&gt;&lt;br&gt;HTML:&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;If dialogOpen truthy, show SelectionComponent else always show GridComponent&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;CSS:&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;OUTERMOST FLEX CONTAINER, CENTER + CENTER, HARD SET TO 80VH TO MEET HEADER + FOOTER; IMPROVE AFTER PROTOTYPE 1&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;div&gt;TS:&lt;/div&gt;&lt;div&gt;Properties:&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;dialogOpen: boolean = tracks service value for diaplying SelectionComponent&lt;/div&gt;&lt;/div&gt;&lt;div&gt;this.dialogOpen subscribed to gridService.dialogOpen&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="830" y="149.38" width="300" height="321.25" as="geometry" />
+        </mxCell>
+        <mxCell id="9THv-4PewHuPhK5rk2aM-9" value="Routes:&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&#39;&#39;&amp;nbsp;&lt;br&gt;OR &#39;(val)&#39;&amp;nbsp;&lt;br&gt;undecided&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="260" y="210" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DsAYXVk71sqchdjCGOco-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9THv-4PewHuPhK5rk2aM-10" target="9THv-4PewHuPhK5rk2aM-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DsAYXVk71sqchdjCGOco-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9THv-4PewHuPhK5rk2aM-10" target="9THv-4PewHuPhK5rk2aM-13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="9THv-4PewHuPhK5rk2aM-10" value="AppComponent:&lt;div&gt;&lt;br&gt;&lt;div&gt;HTML:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Calls &amp;lt;app-header&amp;gt; and &amp;lt;app-footer&amp;gt; directly&amp;nbsp;&lt;/div&gt;&lt;div&gt;sandwiches &amp;lt;router-outlet&amp;gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;CSS:&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;header + footer are flex-shrink 0 with fixed heights&amp;nbsp;&lt;/div&gt;&lt;div&gt;router outlet takes up remaining space via flex&amp;nbsp;&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="440" y="225" width="280" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="9THv-4PewHuPhK5rk2aM-12" value="HeaderComponent:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Contains Input Button&lt;br&gt;(opens SelectionComponent)&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;HEADER AND FOOTER BOTH 10VH&amp;nbsp;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="840" y="-30" width="200" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="9THv-4PewHuPhK5rk2aM-13" value="FooterComponent&amp;nbsp;" style="whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="905" y="520" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DsAYXVk71sqchdjCGOco-1" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="9THv-4PewHuPhK5rk2aM-10" target="9THv-4PewHuPhK5rk2aM-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="720" y="340" as="sourcePoint" />
+            <mxPoint x="770" y="290" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DsAYXVk71sqchdjCGOco-6" value="GridComponent&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Preallocated Grid Space (&lt;b&gt;Prototype 1 uses 500x500px square&lt;/b&gt;)&amp;nbsp;&lt;br&gt;- GridComponent eithher generates a default grid of 16x16 or takes in a custom value from service and regenerates&amp;nbsp;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="100" width="270" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="DsAYXVk71sqchdjCGOco-8" value="SelectionComponent&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Opens Centered Input Model on click (from button in Heade)&amp;nbsp;&lt;br&gt;&lt;/div&gt;&lt;div&gt;- Makes rest of screen dark, click X or anywhere out of focus to close&amp;nbsp;&lt;/div&gt;&lt;div&gt;- Allows user to input 1-100&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1290" y="390" width="280" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="DsAYXVk71sqchdjCGOco-12" value="Functions:&amp;nbsp;&lt;br&gt;&lt;br&gt;openDialog():&amp;nbsp;&lt;br&gt;- Opens SelectionComponent, calls gridService.openDialog()" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1025" y="-80" width="175" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="DsAYXVk71sqchdjCGOco-13" value="Functions:&amp;nbsp;&lt;br&gt;&lt;br&gt;printGrid(inputVal: number):&lt;div&gt;- If no inputVal, print 16x16&lt;/div&gt;&lt;div&gt;- if inputVal, get from service.gridMath(inputVal) prior to generation&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1720" y="10" width="190" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="DsAYXVk71sqchdjCGOco-14" value="Functions:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;userSelection(inputVal: number 1-100):&amp;nbsp;&lt;/div&gt;&lt;div&gt;- Take in user input value, pass to service for gridMath(inputVal)&lt;/div&gt;&lt;div&gt;- Success / Failure Toast messaging&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1525" y="520" width="210" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="DsAYXVk71sqchdjCGOco-15" value="GRIDMATH:&lt;br&gt;&lt;br&gt;- IN A SQUARE; need to dynamically generate a fixed number of boxes based on an input value from 1 - 100 inclusive.&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;Square = L X L&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;1 box in square = 800x800px, 1x800px square (one side...)&lt;/div&gt;&lt;div&gt;2 box in square = 800, 2x400px square&amp;nbsp;&lt;/div&gt;&lt;div&gt;16 box in square = 800, 16x50px square - start here&amp;nbsp;&lt;/div&gt;&lt;div&gt;50 box in square = 800, 50x16px square&amp;nbsp;&lt;/div&gt;&lt;div&gt;100 box in square = 800, 100x8px square&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Box divs should be able to dynamically scale in size from 8px to 800px&amp;nbsp;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;container = 800 x 800&amp;nbsp;&lt;/div&gt;&lt;div&gt;numOfSquares = container(L) / userInput(1-100)&amp;nbsp;&lt;/div&gt;&lt;div&gt;gridSize = numOfSquares x numOfSquares&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="500" width="510" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="DsAYXVk71sqchdjCGOco-16" value="Service Properties:&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;isDefaultGrid: boolean = always true by default, changed when custom user value is input&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;defaultSquares: int = 16&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;numOfSquares: int = init at 16 but tracks current user input value&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;totalSquares: int = currently unused and showing 256, may be needed for formula calc later on&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;squareSize: int = init at 0, can init at actual default size but tracks size as it changes&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;dialogOpen: boolean = tracks whether SelectionComponent is open or not&amp;nbsp;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="720" width="410" height="410" as="geometry" />
+        </mxCell>
+        <mxCell id="DsAYXVk71sqchdjCGOco-17" value="Grid Generation (Default):&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;On Init &amp;gt;&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;GridComponent calls generateDefaultGrid()&amp;nbsp;&lt;br&gt;&lt;b&gt;generateDefaultGrid() does for loop against defaultGridSize to create array of defaultGridSize size (16) which is required for ngFor iteration &amp;gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;GridComponent calls service.calculateGrid(16) &amp;gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;service.calculateGrid() finds the squareSize (dimensions when compared to 500x500px gird) by calling this.gridMath(), then tracks input val in numOfSquares &amp;gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;this.gridMath() returns a proportionate squareSize based on the input numOfSquares val and viewport size - CURR ONLY RETURNS INPUTVAL / 500 FOR PROTOTYPE 1 &amp;gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;GridComponent then insertSquares(sizeObj.objSquareSize, sizeObj.objNumOfSquares) which actually produces new .square &amp;lt;div&amp;gt; elements which have a size value passed in &amp;gt;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;insertSquares()&amp;nbsp;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="1275" y="-420" width="350" height="470" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,43 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/28.0.4 Chrome/138.0.7204.97 Electron/37.2.1 Safari/537.36" version="28.0.4">
+  <diagram name="Page-1" id="DC23oaqKzGKtHKG0idh1">
+    <mxGraphModel dx="1165" dy="569" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="9THv-4PewHuPhK5rk2aM-3" value="Objective:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Dynamically &lt;/b&gt;generated 16x16&amp;nbsp; grid within pre-allocated space with possibility of being regenerated up to size of 100x100 &lt;b&gt;within same preallocated size&amp;nbsp;&lt;/b&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="320" y="40" width="180" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="9THv-4PewHuPhK5rk2aM-4" value="Components:&amp;nbsp;&lt;div&gt;&lt;br&gt;AppComponent&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;HeaderComponent&lt;/span&gt;&lt;/div&gt;&lt;div&gt;FooterComponent&amp;nbsp;&lt;/div&gt;&lt;div&gt;MainComponent: container&amp;nbsp;&lt;/div&gt;&lt;div&gt;GridComponent: preallocated grid space&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="30" y="40" width="220" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="9THv-4PewHuPhK5rk2aM-5" value="Logic:&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;grid.service.ts&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="60" y="210" width="160" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="9THv-4PewHuPhK5rk2aM-6" value="Service Functions:&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;generateGrid(16): generate default grid&amp;nbsp;&lt;/div&gt;&lt;div&gt;generateGrid(1-100 int): generate user request grid&lt;/div&gt;&lt;div&gt;destroyGrid(): remove previous grid&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="20" y="310" width="300" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="9THv-4PewHuPhK5rk2aM-7" value="HeaderComponent&amp;nbsp;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9THv-4PewHuPhK5rk2aM-8" value="MainComponent" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9THv-4PewHuPhK5rk2aM-9" value="Routes:&amp;nbsp;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&#39;&#39;&amp;nbsp;&lt;br&gt;OR &#39;(val)&#39;&amp;nbsp;&lt;br&gt;undecided&lt;/div&gt;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="260" y="210" width="140" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="9THv-4PewHuPhK5rk2aM-10" value="AppComponent" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="290" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9THv-4PewHuPhK5rk2aM-11" value="FooterComponent&amp;nbsp;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9THv-4PewHuPhK5rk2aM-12" value="HeaderComponent&amp;nbsp;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="170" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="9THv-4PewHuPhK5rk2aM-13" value="FooterComponent&amp;nbsp;" style="whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="790" y="410" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

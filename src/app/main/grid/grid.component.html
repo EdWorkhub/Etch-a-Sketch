@@ -1,0 +1,10 @@
+<div *ngIf="gridActive" class="grid-container-vp">
+
+    <div class="grid-x32"  
+    *ngFor="let grid of gridIterator"
+    (mouseenter)="animateGrid($event)">
+
+    </div> 
+
+</div>
+
