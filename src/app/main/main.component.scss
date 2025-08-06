@@ -1,4 +1,5 @@
-.parent-container {
+// Height currently 80vh Body, 10vh Header, 10vh Footer (make more responsive) 
+.parent-container { 
     display: flex; 
     align-items: center;
     justify-content: center;
@@ -7,11 +8,3 @@
     background-color: lightgray;
 }
 
-.selection-container {
-    
-}
-
-// app-grid {
-//     display: flex;
-//     align-items: center;
-// }

@@ -31,11 +31,11 @@ export class GridComponent {
   // 32x32 = 1024 
   // 64x64 = 4096
   // 100x100 = 10000
-  defaultGridSize: number = 1024;
+  defaultGridSize: number = 256;
   // Custom Grid size tracker 
   customGridSize: number = 0;
   // Store Grid dimensions, init to 0 but set to 16 square val by default, then track value from custom inputs provided by service
-  squareSize: number = 0;
+  squareDimensions!: number;
   // Object for storing size / quantity values instead? 
   gridSizeObj: sizeObj = {
     objSquareSize: 0,
@@ -64,8 +64,10 @@ export class GridComponent {
     }
     // Log Array
     console.log(this.gridIterator);
+    // Set Grid Size to 16 x 16 
     this.customGridSize = this.defaultGridSize;
-    this.squareSize = this.gridSizeObj.objSquareSize;
+    // Set CSS Dimensions based on rootof defaultGridSize
+    this.squareDimensions = (50/16)
     // Log Object 
     console.log(this.gridSizeObj);
     // Curr: Array of 16, squareSize = 16 / 500, numOfSquares = 16
@@ -75,15 +77,16 @@ export class GridComponent {
   // Takes in value from + 1 - 100
   generateCustomGrid(customGridSize: number) {
     this.destroyGrid();
-    for (let i = 0; i < customGridSize; i++) {
+    this.customGridSize = (customGridSize*customGridSize);
+    for (let i = 0; i < this.customGridSize; i++) {
       this.gridIterator.push({});
     }
     console.log(this.gridIterator);
-    this.customGridSize = customGridSize;
-    this.squareSize = this.gridSizeObj.objSquareSize;
+    this.squareDimensions = (50/customGridSize);
     console.log(this.gridSizeObj);
     this.gridActive = true;
   }
+
 
   // Simple Grid Div Animation 
   animateGrid(event: MouseEvent) {

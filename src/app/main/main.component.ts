@@ -12,27 +12,20 @@ import { GridService } from '../grid.service';
 })
 export class MainComponent {
 
-  // CONSTRUCTOR
+  // || CONSTRUCTOR
   constructor(private gridService: GridService) {}
 
-  // PROPERTIES 
+  // || PROPERTIES 
+
   // Indicates whether SelectionComponent dialog is opened - Property that matches Service 
   dialogOpen = false;
-  // Default 16x16 grid size, edited via service, for static display only in prototype
-  // gridQuantity: number = 256;
 
-  // ngOnInit ---------------------
+  // || ngOnInit 
   // Subscribe to dialogOpen changes from Service in order to know when to display SelectionComponent - this.dialogOpen subscribes to service.dialogOpen
   ngOnInit() {
     this.gridService.dialog$.subscribe(dialog => this.dialogOpen = dialog)
   }
 
-  // || GENERAL FUNCTIONS
-  
-  // || HELPER FUNCTIONS 
-
-  // || GETTER / SETTER FUNCTIONS
-  
   // || DEPRECATED FUNCTIONS 
 
   // Was using this with NgFor prior to realizing that column sizes needed to be generated dynamically via backend 

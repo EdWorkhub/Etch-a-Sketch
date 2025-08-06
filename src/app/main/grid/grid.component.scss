@@ -18,30 +18,8 @@
 
 
 .grid {
-    height: 50px; 
-    width: 50px; 
     background-color: lightcoral;
-}
-
-// 1x1, 16x16, 32x32, 64x64...
-
-.grid-x1 {
-    height: 50vh; 
-    width: 50vw; 
-    background-color: lightcoral;
-}
-
-.grid-x16 {
-    height: 3.125vh; 
-    width: 3.125vw; 
-    background-color: lightcoral;
-}
-
-.grid-x32 {
-    height: 1.5625vh; 
-    width: 1.5625vw; 
-    background-color: lightcoral;
-    transition: background-color 0.3s;
+        transition: background-color 0.3s;
     
     &.active {
         animation: glow-n-grow 5s forwards;
@@ -63,20 +41,4 @@
     }
 }
 
-
-.grid-x64 {
-    height: 0.78125vh; 
-    width: 0.78125vw; 
-    background-color: lightcoral;
-}
-
-.grid-x100 {
-    height: 0.5vh; 
-    width: 0.5vw; 
-    background-color: lightcoral;
-}
-
-.grid:hover {
-    background-color: aliceblue;
-}
 

@@ -1,21 +1,16 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-  // // Testing use of object to transfer data from service to GridComponent
-  // type sizeObj = {
-  //   objSquareSize: number;
-  //   objNumOfSquares: number;
-  // }
-
 @Injectable({
   providedIn: 'root'
 })
 export class GridService {
 
-  // CONSTRUCTOR
+  // || CONSTRUCTOR
   constructor() { }
 
-  // PROPERTIES
+  // || PROPERTIES
+  
   // Tracks default / custom grid value 
   isDefaultGrid = true;
   // Tracking input val 
@@ -31,7 +26,7 @@ export class GridService {
   dialogOpen = false;
   gridUpdated = false;
 
-  // GRID FUNCTIONS
+  // || GENERAL FUNCTIONS
 
   // Generate default grid of 16x16 or take in custom input from 1-100
   // Take in gridMath() size value, set generated box div to that value 
@@ -41,7 +36,7 @@ export class GridService {
     // Find square dimensions based on input val 
       this.squareSize = this.gridMath(val);
       // Track input val 
-      this.customGridSize = (val*val);
+      this.customGridSize = val;
       this.changeGrid();
       return this.squareSize;
   }
@@ -55,34 +50,33 @@ export class GridService {
     return (50 / val)
   }
 
-
-  // GENERAL FUNCTIONS
-
+  // grid$ Behavior Subject -> Informs Grid Component when customGridSize value has been input via SelectionComponent into Service 
+  // BS = return Func, new BS<>(), observable$, next(return)
   returnGrid() {
     return this.customGridSize;
   }
-
+  //
   private gridSource = new BehaviorSubject<number | null>(null);
-
   grid$ = this.gridSource.asObservable();
-
   changeGrid() {
     this.gridSource.next(this.returnGrid());
   }
 
-  // Behavior Subject for tracking Selection Dialog open / close status... prob overkill
-  // Return Service val
-  changeDialog() {
+  // $dialog Behavior Subject -> Tracks whether SelectionComponent is open overtop of MainComponent (dialogOpen === open SelectionComponent)
+  // BS = return Func, new BS<>(), observable$, next(return)
+  returnDialog() {
     return this.dialogOpen;
   };
   // Establish BS set to Return Service Val 
-  private dialogSource = new BehaviorSubject<boolean>(this.changeDialog());
+  private dialogSource = new BehaviorSubject<boolean>(this.returnDialog());
   // Create observable obj 
   dialog$ = this.dialogSource.asObservable();
   // Function to go "next" and fire val change
   openSelectionDialog() {
-    this.dialogSource.next(this.changeDialog())
+    this.dialogSource.next(this.returnDialog())
   }
+
+  // || NAVIGATION FUNCTIONS 
 
   // Opens Dialog (SelectionComponent)
   openDialog() {

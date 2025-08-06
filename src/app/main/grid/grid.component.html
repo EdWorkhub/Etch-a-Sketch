@@ -1,7 +1,9 @@
 <div *ngIf="gridActive" class="grid-container-vp">
 
-    <div class="grid-x32"  
+    <div class="grid"  
     *ngFor="let grid of gridIterator"
+    [style.height]="squareDimensions + 'vh'"
+    [style.width]="squareDimensions + 'vw'"
     (mouseenter)="animateGrid($event)">
 
     </div> 
