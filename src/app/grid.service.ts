@@ -17,11 +17,6 @@ export class GridService {
   customGridSize!: number;
   // Default custom size val, init to 0 
   squareSize: number = 0;
-  // // Attempt to track values in Obj
-  // sizeObj1: sizeObj = {
-  //   objSquareSize: 0,
-  //   objNumOfSquares: 0
-  // }
   // Tracking Selection Component open / close 
   dialogOpen = false;
   gridUpdated = false;

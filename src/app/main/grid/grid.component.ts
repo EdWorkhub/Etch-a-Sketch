@@ -47,6 +47,11 @@ export class GridComponent {
   // || ngOnInit 
   ngOnInit() {
     this.generateDefaultGrid();
+    this.gridService.dialog$.subscribe(dialog =>{
+      if (dialog) {
+        this.destroyAnimation()
+      }
+    });
     this.gridService.grid$.subscribe(grid => {
       if (grid) {
         this.generateCustomGrid(grid);
@@ -87,7 +92,6 @@ export class GridComponent {
     this.gridActive = true;
   }
 
-
   // Simple Grid Div Animation 
   animateGrid(event: MouseEvent) {
     // Grab HTMLElement
@@ -103,6 +107,18 @@ export class GridComponent {
     setTimeout(() => {
       el.classList.remove('active')
     }, 6000);
+  }
+
+  destroyAnimation() {
+    // Select all .grid template elements as Array
+    const els = document.getElementsByClassName("grid") as HTMLCollectionOf<HTMLElement>
+    // Loop over Array and remove .active animation css class 
+    // Called when SelectionComponent is opened to avoid bug where animation shows over z index (possible other solution...)
+    for (let i = 0; i < els.length; i++) {
+      if (els[i].classList.contains('active')) {
+        els[i].classList.remove('active');
+      }
+    }
   }
 
   destroyGrid() {
