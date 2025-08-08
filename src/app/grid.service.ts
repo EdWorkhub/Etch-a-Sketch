@@ -17,6 +17,7 @@ export class GridService {
   customGridSize!: number;
   // Default custom size val, init to 0 
   squareSize: number = 0;
+
   // Tracking Selection Component open / close 
   dialogOpen = false;
   gridUpdated = false;
@@ -42,7 +43,9 @@ export class GridService {
     // squareSize = 50 / val (i.e 16 = 3.125)
     // gridSize = numOfSquares x numOfSquares
     // Will eventually be based on some dynamic screen value, currently pegged as static 
-    return (50 / val)
+
+    // NEW: Page now 80vh, 100vw; need to calculate each side 
+    return  (100 / val);
   }
 
   // grid$ Behavior Subject -> Informs Grid Component when customGridSize value has been input via SelectionComponent into Service 

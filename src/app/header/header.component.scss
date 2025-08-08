@@ -1,7 +1,41 @@
 .header-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    background-color: lightblue;
-    height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  background: linear-gradient(90deg, #ffffff, #f7f9fc); /* soft gradient */
+  color: #2c3e50;
+  height: 10vh;
+  border-bottom: 1px solid #dfe6ed;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.header-text {
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  color: #34495e;
+  border-left: 4px solid #3498db; /* accent bar */
+  padding-left: 0.75rem;
+}
+
+.header-bar button {
+  background-color: #3498db; /* soft blue */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 0.55rem 1.3rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+.header-bar button:hover {
+  background-color: #2980b9;
+  transform: translateY(-1px);
+}
+
+.header-bar button:active {
+  transform: translateY(0);
 }

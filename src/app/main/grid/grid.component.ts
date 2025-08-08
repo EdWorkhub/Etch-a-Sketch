@@ -46,12 +46,16 @@ export class GridComponent {
 
   // || ngOnInit 
   ngOnInit() {
+    // Generate default 16x16 grid 
     this.generateDefaultGrid();
+    // Subscribe to dialog$ event in Service to track when SelctionComponent is opened 
+    // When is opened, removes animation css classes to avoid overlap
     this.gridService.dialog$.subscribe(dialog =>{
       if (dialog) {
         this.destroyAnimation()
       }
     });
+    // Subscribe to grid$ event in Service to see when customGridSize is input from SelectionComponent 
     this.gridService.grid$.subscribe(grid => {
       if (grid) {
         this.generateCustomGrid(grid);
@@ -96,13 +100,10 @@ export class GridComponent {
   animateGrid(event: MouseEvent) {
     // Grab HTMLElement
     const el = event.target as HTMLElement; 
-
     // Check for HTML Property
     if (el.classList.contains('active')) return; 
-
     // If absent, add HTML property
     el.classList.add('active');
-
     // Exclude Div from being animated again for x ms 
     setTimeout(() => {
       el.classList.remove('active')
@@ -125,9 +126,7 @@ export class GridComponent {
     this.gridIterator = [];
   }
 
-
   // DEPRECATED 
-
   // Was using this with NgFor prior to realizing that column sizes needed to be generated dynamically via backend 
   generateRowIndexes(val: number): Array<number> {
   // Allows for easier use of ngFor loops with number val

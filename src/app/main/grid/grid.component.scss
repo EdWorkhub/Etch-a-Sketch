@@ -1,21 +1,10 @@
-.grid-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    overflow: hidden;
-    height: 500px;
-    width: 500px;
-    background-color: antiquewhite;
-}
-
 .grid-container-vp {
     display: flex;
     flex-wrap: wrap;
-    height: 50vh;
-    width: 50vw;
+    height: 80vh;
+    width: 100vw;
     background-color: lightcoral;
 }
-
 
 .grid {
     background-color: lightcoral;

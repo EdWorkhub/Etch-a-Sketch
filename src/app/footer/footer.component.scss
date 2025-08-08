@@ -1,11 +1,21 @@
 .footer-bar {
-    display: flex; 
-    align-items: center;
-    justify-content: center;
-    height: 10vh;
-    background-color: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center content for footer */
+  padding: 0 1.5rem;
+  background: linear-gradient(90deg, #ffffff, #f7f9fc);
+  color: #34495e;
+  height: 8vh;
+  border-top: 1px solid #dfe6ed;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.08);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
 }
 
 .footer-text {
-
+  color: #34495e;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  font-size: 0.95rem;
 }

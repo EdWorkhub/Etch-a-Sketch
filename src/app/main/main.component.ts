@@ -16,7 +16,6 @@ export class MainComponent {
   constructor(private gridService: GridService) {}
 
   // || PROPERTIES 
-
   // Indicates whether SelectionComponent dialog is opened - Property that matches Service 
   dialogOpen = false;
 
