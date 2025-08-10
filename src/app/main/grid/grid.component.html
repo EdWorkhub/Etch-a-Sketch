@@ -2,8 +2,8 @@
 
     <div class="grid"  
     *ngFor="let grid of gridIterator"
-    [style.height]="squareDimensions + 'vh'"
-    [style.width]="squareDimensions + 'vw'"
+    [style.width]="gridItemWidth + 'vw'"
+    [style.height]="gridItemHeight + 'vh'"
     (mouseenter)="animateGrid($event)">
 
     </div> 

@@ -29,7 +29,7 @@ export class SelectionComponent {
     if (this.myForm.valid) {
       this.userVal! = Number(this.myForm.value.myInput);
     }
-    this.gridService.calculateGrid(this.userVal!);
+    this.gridService.intakeCustomGridValue(this.userVal!);
     this.gridService.closeDialog();
   }
 

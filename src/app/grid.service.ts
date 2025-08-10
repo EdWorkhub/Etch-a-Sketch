@@ -16,7 +16,8 @@ export class GridService {
   // Tracking input val 
   customGridSize!: number;
   // Default custom size val, init to 0 
-  squareSize: number = 0;
+  gridItemWidth: number = 0;
+  gridItemHeight: number = 0;
 
   // Tracking Selection Component open / close 
   dialogOpen = false;
@@ -28,24 +29,37 @@ export class GridService {
   // Take in gridMath() size value, set generated box div to that value 
   // Multiply by val 
   // Generate that numOfSquares at that gridSize within GridComponent 
-  calculateGrid(val: number) {
-    // Find square dimensions based on input val 
-      this.squareSize = this.gridMath(val);
-      // Track input val 
-      this.customGridSize = val;
-      this.changeGrid();
-      return this.squareSize;
+  // calculateGridItemWidth(val: number): number {
+  //   // Find square dimensions based on input val 
+  //   // NEW: Need two dimensions for L X W 
+  //     this.gridItemWidth = this.getWidth(val);
+  //     this.calculateGridItemHeight(val);
+  //     return this.gridItemWidth;
+  // }
+
+  // calculateGridItemHeight(val: number): number {
+  // // Find square dimensions based on input val 
+  // // NEW: Need two dimensions for L X W 
+  //   this.gridItemHeight = this.getHeight(val);
+  //   // Track input val 
+  //   this.customGridSize = val;
+  //   // Pass customGridValue to GridComponent
+  //   this.changeGrid();
+  //   return this.gridItemHeight;
+  // }
+
+  intakeCustomGridValue(val: number): void{
+    this.customGridSize = val;
+    this.changeGrid();
   }
 
-  gridMath(val: number) {
-    // Find column row size data based on input val 
-    // Based on 50vh x 50vw
-    // squareSize = 50 / val (i.e 16 = 3.125)
-    // gridSize = numOfSquares x numOfSquares
-    // Will eventually be based on some dynamic screen value, currently pegged as static 
-
+  getWidth(val: number): number {
     // NEW: Page now 80vh, 100vw; need to calculate each side 
     return  (100 / val);
+  }
+
+  getHeight(val: number): number {
+    return (80 / val);
   }
 
   // grid$ Behavior Subject -> Informs Grid Component when customGridSize value has been input via SelectionComponent into Service 
